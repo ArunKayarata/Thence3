@@ -18,6 +18,7 @@ export function Register() {
   function disclose(){
     navigate('/')
   }
+  
   const handleSubmit = () => {
     const emailSchema = z.string().email();
 
