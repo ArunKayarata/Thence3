@@ -16,7 +16,7 @@ export function Register() {
   setname(event.target.value)
  }
   function disclose(){
-    navigate('/home')
+    navigate('/')
   }
   const handleSubmit = () => {
     const emailSchema = z.string().email();

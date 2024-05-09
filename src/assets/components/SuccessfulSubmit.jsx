@@ -19,7 +19,7 @@ export function SuccessfulSubmit() {
 
   useEffect(() => {
     if (sec === 0) {
-      navigate("/home"); // Redirect to home page when countdown reaches 0
+      navigate("/"); // Redirect to home page when countdown reaches 0
     }
   }, [sec]);
     return <div className="w-1/3 h-[400px] flex flex-col justify-center items-center mx-auto mt-10">
