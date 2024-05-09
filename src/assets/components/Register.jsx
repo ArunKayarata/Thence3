@@ -30,7 +30,9 @@ export function Register() {
       setIsValid(false);
     }
   };
- const shouldidisable=name.trim() === "" || email.trim() === "";
+ const shouldidisable=()=>{
+  return name.trim() === "" || email.trim() === "";
+ }
 
   return <div>
   <img src={logo} alt="logo" className="ml-14 mt-3"/>
@@ -46,9 +48,11 @@ export function Register() {
         <input placeholder="Enter your email" className="h-[50px] w-full border bg-gray-200 px-4 my-2 rounded-full" onChange={showemail}></input>
         {isValid || ( <div className=" flex justify-start items-center w-full">
           <img src={incorrect} alt="error"/>
-        <p className="text-red-600 text-start font-manrope  font-semibold text-sm">Enter a valid email address</p>
+        <p className="text-red-600 text-start font-manrope   font-semibold  curtext-sm">Enter a valid email address</p>
         </div>)}
-        <button className="bg-Submitcolor w-full h-[50px] rounded-full mt-10 text-white" onClick={handleSubmit} disabled={shouldidisable}>Submit</button>
+        <button className={`w-full h-[50px] rounded-full mt-10 text-white ${
+                  shouldidisable() ? "bg-gray-300 cursor-not-allowed" : "bg-questioncolor cursor-pointer"
+                }`} onClick={handleSubmit} disabled={shouldidisable()}>Submit</button>
       </div>
     </div>
   </div>
